@@ -14,6 +14,15 @@
   <a href="https://grafana.com/docs/k6/latest/get-started/running-k6/">Run k6</a>
 </p>
 
+<p align="center">
+  <a href="#what-is-this-repo">Overview</a> ·
+  <a href="#install-k6">Install</a> ·
+  <a href="#run-the-test">Run Test</a> ·
+  <a href="#where-to-put-your-website">Add Website</a> ·
+  <a href="#understand-the-important-parts">Explanation</a> ·
+  <a href="#documentation-links">Docs</a>
+</p>
+
 ---
 
 ## What is this repo?
@@ -61,7 +70,7 @@ The test increases traffic every **3 minutes**.
 Open this file:
 
 ```text
-tests/simple-load-test.js
+tests/test-load.js
 ```
 
 Find this line:
@@ -79,13 +88,13 @@ const WEBSITE_URL = __ENV.WEBSITE_URL || 'https://your-website.com';
 You can also keep the file unchanged and pass your website from the terminal:
 
 ```bash
-k6 run -e WEBSITE_URL=https://your-website.com tests/simple-load-test.js
+k6 run -e WEBSITE_URL=https://your-website.com tests/test-load.js
 ```
 
 Example:
 
 ```bash
-k6 run -e WEBSITE_URL=https://example.com tests/simple-load-test.js
+k6 run -e WEBSITE_URL=https://example.com tests/test-load.js
 ```
 
 ---
@@ -205,19 +214,19 @@ docker pull grafana/k6
 Run the test with Docker on macOS/Linux:
 
 ```bash
-docker run --rm -v "$PWD:/scripts" grafana/k6 run /scripts/tests/simple-load-test.js
+docker run --rm -v "$PWD:/scripts" grafana/k6 run /scripts/tests/test-load.js
 ```
 
 Run the test with Docker on Windows PowerShell:
 
 ```powershell
-docker run --rm -v ${PWD}:/scripts grafana/k6 run /scripts/tests/simple-load-test.js
+docker run --rm -v ${PWD}:/scripts grafana/k6 run /scripts/tests/test-load.js
 ```
 
 Run the test with Docker and your own website:
 
 ```bash
-docker run --rm -v "$PWD:/scripts" -e WEBSITE_URL=https://your-website.com grafana/k6 run /scripts/tests/simple-load-test.js
+docker run --rm -v "$PWD:/scripts" -e WEBSITE_URL=https://your-website.com grafana/k6 run /scripts/tests/test-load.js
 ```
 
 ---
@@ -239,19 +248,19 @@ After downloading and extracting it, put `k6` or `k6.exe` in your system `PATH`.
 Run with the website inside the code:
 
 ```bash
-k6 run tests/simple-load-test.js
+k6 run tests/test-load.js
 ```
 
 Run with your own website without changing the code:
 
 ```bash
-k6 run -e WEBSITE_URL=https://your-website.com tests/simple-load-test.js
+k6 run -e WEBSITE_URL=https://your-website.com tests/test-load.js
 ```
 
 Example:
 
 ```bash
-k6 run -e WEBSITE_URL=https://carreera.com tests/simple-load-test.js
+k6 run -e WEBSITE_URL=https://carreera.com tests/test-load.js
 ```
 
 ---
@@ -269,7 +278,7 @@ import { check, sleep } from 'k6';
 // const WEBSITE_URL = __ENV.WEBSITE_URL || 'https://your-website.com';
 //
 // Option 2: Keep the file the same and run:
-// k6 run -e WEBSITE_URL=https://your-website.com tests/simple-load-test.js
+// k6 run -e WEBSITE_URL=https://your-website.com tests/test-load.js
 // ============================================================
 
 const WEBSITE_URL = __ENV.WEBSITE_URL || 'https://carreera.com';
