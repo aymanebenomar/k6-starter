@@ -1,4 +1,4 @@
-<p align="center">
+x<p align="center">
   <img src="https://grafana.com/media/menus/products/grafana-menu-icon-k6.svg" width="120" alt="Grafana k6 logo" />
 </p>
 
@@ -38,7 +38,7 @@ The test:
 
 The main test file is here:
 
-[tests/simple-load-test.js](tests/simple-load-test.js)
+[tests/test-load.js](tests/test-load.js)
 
 ---
 
