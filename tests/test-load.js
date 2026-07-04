@@ -1,6 +1,16 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
+// ============================================================
+// PUT YOUR WEBSITE HERE
+// ============================================================
+// Option 1: Replace the default URL below:
+// const WEBSITE_URL = __ENV.WEBSITE_URL || 'https://your-website.com';
+//
+// Option 2: Keep the file the same and run:
+// k6 run -e WEBSITE_URL=https://your-website.com tests/simple-load-test.js
+// ============================================================
+
 const WEBSITE_URL = __ENV.WEBSITE_URL || 'https://carreera.com';
 
 export const options = {
@@ -32,14 +42,3 @@ export default function () {
   // Wait 1 second before the same virtual user sends another request
   sleep(1);
 }
-
-
-// ============================================================
-// PUT YOUR WEBSITE HERE
-// ============================================================
-// Option 1: Replace the default URL below:
-// const WEBSITE_URL = __ENV.WEBSITE_URL || 'https://your-website.com';
-//
-// Option 2: Keep the file the same and run:
-// k6 run -e WEBSITE_URL=https://your-website.com tests/simple-load-test.js
-// ============================================================
