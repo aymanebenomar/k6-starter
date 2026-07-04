@@ -1,4 +1,4 @@
-x<p align="center">
+<p align="center">
   <img src="https://grafana.com/media/menus/products/grafana-menu-icon-k6.svg" width="120" alt="Grafana k6 logo" />
 </p>
 
